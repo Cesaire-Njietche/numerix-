@@ -96,9 +96,9 @@ C'est pour ça que le moteur sait *pourquoi* l'enfant s'est trompé, et pas seul
 
 ```python
 import random
-from moteur import GraphePDA
+from registre import GraphePDA
 
-g = GraphePDA("curriculum")
+g = GraphePDA(".")
 
 # Par compétence
 p = g.generer("ARI-OPE-A06a", seed=42)

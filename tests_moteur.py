@@ -194,6 +194,17 @@ def test_branchement_trois_issues():
           f"typique={compteur[TypeResultat.ERREUR_TYPIQUE]} "
           f"aléatoire={compteur[TypeResultat.ERREUR_ALEATOIRE]}")
 
+    # Un client JSON envoie (quotient, reste) sous forme de liste
+    nb_tuples = 0
+    for _ in range(N):
+        p = gen_mult_div_personnelle(rng)
+        if isinstance(p.reponse, tuple):
+            nb_tuples += 1
+            verifier(p.evaluer(list(p.reponse)).type == TypeResultat.CORRECT,
+                     "réponse (quotient, reste) en liste non reconnue")
+    verifier(nb_tuples > 0, "aucune réponse tuple générée : test sans objet")
+    print(f"  Réponses tuple envoyées en liste . {nb_tuples} vérifiées")
+
 
 # ══════════════════════════════════════════════════════════════════════
 #  4. Déterminisme
@@ -333,7 +344,7 @@ def test_integration_graphe():
 
 def main():
     print("=" * 64)
-    print("  TESTS DU MOTEUR MATHÉMATIQUE DÉTERMINISTE — IMHOTEP")
+    print("  TESTS DU MOTEUR MATHÉMATIQUE DÉTERMINISTE — NUMERIX")
     print("=" * 64)
 
     titre("1. Justesse mathématique")

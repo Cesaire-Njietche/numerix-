@@ -136,7 +136,7 @@ def main():
     for univers in ["echecs", "medecine", "science", "cuisine", "nature"]:
         dispo = g.par_univers(univers)
         print(f"\n  {univers.upper():<14} {len(dispo)} compétences implémentées")
-        rng_u = random.Random(hash(univers) % 10000)
+        rng_u = random.Random(sum(map(ord, univers)))
         try:
             p = g.generer_pour_univers(univers, annee=4, rng=rng_u)
             ctx = p.contexte_narratif
