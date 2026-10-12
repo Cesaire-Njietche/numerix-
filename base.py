@@ -127,6 +127,11 @@ class Probleme:
 
     @staticmethod
     def _equivalent(a: Any, b: Any) -> bool:
+        # JSON clients send tuples (quotient, reste) as lists
+        if isinstance(a, list):
+            a = tuple(a)
+        if isinstance(b, list):
+            b = tuple(b)
         if isinstance(a, tuple) and isinstance(b, tuple):
             return a == b
         try:

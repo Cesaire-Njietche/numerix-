@@ -1,5 +1,5 @@
 """
-Moteur mathématique déterministe — Imhotep.
+Moteur mathématique déterministe — Numerix.
 
 Couche 2 de l'architecture. Aucun LLM n'intervient ici.
 """

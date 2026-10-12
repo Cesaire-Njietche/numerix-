@@ -31,7 +31,7 @@ def gen_faits_addition(
 ) -> Probleme:
     """Faits numériques de l'addition (0+0 à 10+10) et soustractions correspondantes.
 
-    Erreurs typiques (PDA / Imhotep) :
+    Erreurs typiques (PDA / Numerix) :
       - erreur_plus_un    : résultat décalé de 1 (surcomptage)
       - confusion_proche  : confond avec un fait numérique voisin
       - lenteur           : géré par le temps de réponse, pas par un distracteur
